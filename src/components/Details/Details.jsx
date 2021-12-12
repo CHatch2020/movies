@@ -13,8 +13,9 @@ export default function Details() {
     <div>
       <h1>Selected Movie</h1>
       <img src={movie.poster} alt={movie.title} />
-      <h3>{movie.title}</h3>
-      <h4>{movie.description}</h4>
+      <h2>{movie.title}</h2>
+      <h4>{movie.name}</h4>
+      <h5>{movie.description}</h5>
       <button onClick={goBack}>Home</button>
     </div>
   );
