@@ -1,26 +1,30 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-export default function AddMovie () {
+function AddMovie () {
     useEffect(() => {
         dispatch({ type: 'FETCH_GENRES'});
     }, []);
 
     const genres = useSelector(store => store.genres);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [title, setTitle] = useState('');
     const [poster, setPoster] = useState('');
     const [description, setDescription] = useState('');
-    const [genre, setGenre] = useState(0);
+    const [genre_id, setGenre_id] = useState(0);
 
     const handleAddMovie = () => {
         console.log('New Movie', title);
         dispatch({
-            type: ''
+            type: 'ADD_MOVIE',
+            payload: {title, poster, description, genre_id}
         })
-    }
+        history.push('/');
+    };
 
     return(
         <div>
@@ -41,8 +45,8 @@ export default function AddMovie () {
                     value={description}
                     placeholder="Description"
                     onChange={(e) => setDescription(e.target.value)} />
-                <select value={genre}
-                    onChange={(e) => setGenre(e.target.value)}>
+                <select value={genre_id}
+                    onChange={(e) => setGenre_id(e.target.value)}>
                         <option disabled value='0'>
                             Pick a Genre!
                         </option>
@@ -61,3 +65,5 @@ export default function AddMovie () {
         </div>
     )
 };
+
+export default AddMovie;
