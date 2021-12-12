@@ -26,8 +26,18 @@ function* fetchAllMovies() {
     } catch {
         console.log('get all error');
     }
-        
-}
+};
+
+const selectedMovie = (state=[], action) => {
+    switch (action.type){
+        case 'SET_SELECTED_MOVIE':
+            console.log('the selected move', action.payload);
+            
+            return action.payload;
+        default:
+            return state;
+    }
+} 
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -57,6 +67,7 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        selectedMovie
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
