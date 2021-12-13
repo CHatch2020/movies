@@ -1,19 +1,20 @@
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
-import './App.css';
-import MovieList from '../MovieList/MovieList'
-import Details from '../Details/Details';
-import AddMovie from '../AddMovie/AddMovie';
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+import "./App.css";
+import MovieList from "../MovieList/MovieList";
+import Details from "../Details/Details";
+import AddMovie from "../AddMovie/AddMovie";
 
 function App() {
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
-      <Router> 
-        <Link to="/addMovie"><button>Add Movie</button></Link>       
+      <header className="header">
+        <h1>The Movies Saga!</h1>
+      </header>
+      <Router>
         <Route path="/" exact>
           <MovieList />
         </Route>
-        
+
         {/* Details page */}
         <Route path="/details">
           <Details />
@@ -27,6 +28,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;

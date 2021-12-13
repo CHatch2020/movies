@@ -2,3 +2,26 @@
     display : flex;
     flex-wrap: wrap;
 }
+
+.head {
+    background-color: #74584D;
+    padding: .1%;
+    color: #B48B78;
+}
+
+section {
+    margin-left: 6%;
+}
+
+.addButton {
+    margin-bottom: 5px;
+    border-radius: 4px;
+    border-color: #29000A;
+}
+
+.addButton:hover {
+    border-color: white;
+    background-color: #29000A;
+    color: #E2DAD4;
+}
+

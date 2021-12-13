@@ -23,8 +23,14 @@ function AddMovie () {
             type: 'ADD_MOVIE',
             payload: {title, poster, description, genre_id}
         })
+        alert('You have added a movie!');
         history.push('/');
     };
+
+    const goHome = () => {
+        alert('You have cancelled adding a movie');
+        history.push('/');
+    }
 
     return(
         <div>
@@ -60,7 +66,8 @@ function AddMovie () {
                             )
                         })}
                 </select>
-                <button onClick={handleAddMovie}>Submit</button>
+                <button onClick={handleAddMovie}>Save</button>
+                <button onClick={goHome}>Cancel</button>
             </form>
         </div>
     )

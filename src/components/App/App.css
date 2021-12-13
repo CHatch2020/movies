@@ -10,6 +10,12 @@
   color: white;
 }
 
+.header {
+  background-color: #29000A;
+  padding: 2%;
+  color: #E2DAD4;
+}
+
 .App-title {
   font-size: 1.5em;
 }

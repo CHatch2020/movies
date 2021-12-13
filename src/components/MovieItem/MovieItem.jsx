@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
+import './MovieItem.css';
+
 function MovieItem({movieItem}) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -12,7 +14,7 @@ function MovieItem({movieItem}) {
   };
 
   return (
-    <div key={movieItem.id}>
+    <div className="images" key={movieItem.id}>
       <h3>{movieItem.title}</h3>
       <img 
         src={movieItem.poster} 
